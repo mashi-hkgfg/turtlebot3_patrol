@@ -1,10 +1,20 @@
 # TurtleBot3 三目标点巡件导航（SRM27 算法组第五讲作业）
 
 ## 环境要求
-- Ubuntu 22.04 + ROS 2 Humble
+- Ubuntu 22.04 LTS + ROS 2 Humble
 - TurtleBot3 `waffle` + `turtlebot3_world`（Gazebo 仿真）
-- 所需 ROS2 包：`turtlebot3_simulations` / `turtlebot3_navigation2` / `nav2_bringup` / `turtlebot3_cartographer` / `nav2_map_server` 等（apt 安装）
-- `export TURTLEBOT3_MODEL=waffle`（已写入 ~/.bashrc）
+- 运行一键巡件所需（apt 安装）：
+  ```bash
+  sudo apt install \
+    ros-humble-turtlebot3-simulations \
+    ros-humble-turtlebot3-navigation2 \
+    ros-humble-nav2-bringup \
+    ros-humble-nav2-map-server \
+    ros-humble-nav2-simple-commander
+  ```
+  （`nav2_simple_commander` 是 patrol_node 依赖；桌面版安装通常已含 rviz2。）
+- 环境变量：`export TURTLEBOT3_MODEL=waffle`（已写入 ~/.bashrc）
+- 如需自行重新建图（可选）：另装 `ros-humble-turtlebot3-cartographer` 与键盘遥控包
 
 ## 运行方法
 一键自动巡件（Gazebo 世界 + Nav2 导航 + RViz + 巡件节点一起启动）：
