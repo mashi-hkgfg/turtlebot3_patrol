@@ -8,16 +8,16 @@
 
 ## 运行方法
 一键自动巡件（Gazebo 世界 + Nav2 导航 + RViz + 巡件节点一起启动）：
-\`\`\`bash
+```bash
 cd ~/turtlebot3_patrol
 colcon build --symlink-install --packages-select patrol   # 首次需编译
 source install/setup.bash
 ros2 launch patrol patrol.launch.py
-\`\`\`
+```
 机器人自动完成：精确初始定位 → 依次到达 3 个目标点（每个点打印剩余距离与到达结果）→ 巡件完成。
 
 ## 项目结构
-\`\`\`
+```
 turtlebot3_patrol/
 ├── README.md                  # 作业说明（本文件）
 ├── .gitignore                 # 忽略 build/ install/ log/ __pycache__/ *.webm
@@ -35,7 +35,7 @@ turtlebot3_patrol/
     │   └── waypoints.py       #     出生点与 3 个目标点坐标（map 系实测值）
     └── launch/
         └── patrol.launch.py   #   一键启动：世界 + 导航栈 + RViz + 巡件节点
-\`\`\`
+```
 
 
 ## 实现思路
